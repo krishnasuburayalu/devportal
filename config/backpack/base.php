@@ -45,7 +45,7 @@ return [
         // Load the fonts separately (so that you can replace them at will):
         'packages/source-sans-pro/source-sans-pro.css',
         'packages/line-awesome/css/line-awesome.min.css',
-        'https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.css'
+        'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css'
 
         // Example (the fonts above, loaded from CDN instead)
         // 'https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css',
@@ -116,7 +116,7 @@ return [
     'scripts' => [
         // Backstrap includes jQuery, Bootstrap, CoreUI, PNotify, Popper
         'packages/backpack/base/js/bundle.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js',
         'js/custom.js',
 
         // examples (everything inside the bundle, loaded from CDN)

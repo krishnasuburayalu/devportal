@@ -5,6 +5,6 @@ data-id="{{ $widget['chart_id'] ?? 'chart-id' }}">
 	  @if (isset($widget['content']['header']))
 	  <div class="card-header">{!! $widget['content']['header'] !!}</div>
 	  @endif
-	  <div class="card-body" id="{{ $widget['chart_id'] ?? 'chart-id' }}"></div>
+	  <canvas class="card-body" id="{{ $widget['chart_id'] ?? 'chart-id' }}" height="400"></canvas>
 	</div>
 </div>

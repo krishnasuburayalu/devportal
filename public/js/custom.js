@@ -4,7 +4,14 @@ $( document ).ready(function() {
 		var id = $( this ).data("id" );
     var labels = $( this ).data("labels" );
 		var series = $( this ).data("series" );
-		var chart = creatLineChart(id,labels,series);
+			var chart = creatLineChart(id,labels,series);
+  });
+
+	$( "div.chart-pie-p1" ).each(function() {
+		var id = $( this ).data("id" );
+    var labels = $( this ).data("labels" );
+		var series = $( this ).data("series" );
+			var chart = creatPieChart(id,labels,series);
   });
 
 });
@@ -13,42 +20,94 @@ var creatLineChart = function(id, labels, series){
 	if(id== undefined || series == undefined){
 		return false;
 	}
-		/* Add a basic data series with six labels and values */
-		var data = {
-			labels: labels,
-			series: series
-		};
-		/* Set some base options (settings will override the default settings in Chartist.js *see default settings*). We are adding a basic label interpolation function for the xAxis labels. */
-		var options = {
-	     showArea: true,
-	     height: '400px',
-			axisX: {
-				labelInterpolationFnc: function(value) {
-					return  value;
-				}
-			}
-		};
+   var dynamicColors = function() {
+					 var r = Math.floor(Math.random() * 255);
+					 var g = Math.floor(Math.random() * 255);
+					 var b = Math.floor(Math.random() * 255);
+					 return "rgb(" + r + "," + g + "," + b + ")";
+				};
+		for (var i in series) {
+			var color = dynamicColors();
+       series[i]['borderColor'] = color;
+			 series[i]['backgroundColor'] = color;
+			 series[i]['fill'] = false;
+			 series[i]['type'] = 'line';
+    }
 
-		/* Now we can specify multiple responsive settings that will override the base settings based on order and if the media queries match. In this example we are changing the visibility of dots and lines as well as use different label interpolations for space reasons. */
-		var responsiveOptions = [
-			['screen and (min-width: 641px) and (max-width: 1024px)', {
-				showPoint: false,
-				axisX: {
-					labelInterpolationFnc: function(value) {
-						return 'Week ' + value;
-					}
-				}
-			}],
-			['screen and (max-width: 640px)', {
-				showLine: false,
-				axisX: {
-					labelInterpolationFnc: function(value) {
-						return 'W' + value;
-					}
-				}
-			}]
-		];
+		var ctx = $('#' + id);
+		var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: labels,
+        datasets: series
+			},
 
-		/* Initialize the chart with the above settings */
-		var chart = new Chartist.Line('#' + id, data, options, responsiveOptions);
+    	options: {
+				responsive: true,
+				elements: {
+         line: {
+             tension: 0
+         }
+      },
+				tooltips: {
+					mode: 'index',
+				},
+				hover: {
+					mode: 'index'
+				},
+        scales: {
+            yAxes: [{
+							 stacked: false,
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+}
+var creatPieChart = function(id, labels, series){
+	if(id== undefined || series == undefined){
+		return false;
+	}
+   var dynamicColors = function() {
+					 var r = Math.floor(Math.random() * 255);
+					 var g = Math.floor(Math.random() * 255);
+					 var b = Math.floor(Math.random() * 255);
+					 return "rgb(" + r + "," + g + "," + b + ")";
+				};
+				var bgcolor =[];
+				for (var i in series) {
+					var color = dynamicColors();
+		       bgcolor[i] = color;
+		    }
+		var ctx = $('#' + id);
+		var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: labels,
+        datasets: [{
+        	data: series,
+					backgroundColor: bgcolor
+		    }]
+			},
+
+    	options: {
+				responsive: true,
+				elements: {
+         line: {
+             tension: 0
+         }
+      },
+				tooltips: {
+					mode: 'index',
+				},
+				hover: {
+					mode: 'index'
+				}
+
+    }
+});
+
 };

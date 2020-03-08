@@ -10,7 +10,7 @@ Route::get('home',[
     'prefix'     => config('backpack.base.route_prefix', 'admin'),
     'middleware' => ['web', config('backpack.base.middleware_key', 'admin')],
     'namespace'  => 'App\Http\Controllers\Admin',
-    'uses' => 'App\Http\Controllers\Admin\HomeController@dashboard'
+    'uses' => 'App\Http\Controllers\Admin\HomeController@db'
 ])->name('home');;
 
 Route::group([

@@ -54,14 +54,13 @@ class importpnc extends Command
           echo "Type Not found";
           exit;
         }
-
         switch($type){
             case 'pnc';
               Excel::import(new PncImport, $this->argument('file'));
             break;
-            /*case 'citi';
+            case 'citi';
               Excel::import(new CitiImport, $this->argument('file'));
-            break;*/
+            break;
             case 'discover';
               Excel::import(new DiscoverImport, $this->argument('file'));
             break;
