@@ -11,6 +11,40 @@ class PncPatternFinder
 
     public static $thisInstance = null;
 
+    public static $categories =  [
+      'Card-Payment' => 'Card-Payment',
+      'Interest' => 'Interest',
+      'Merchandise' => 'Merchandise',
+      'Payment' => 'Payment',
+      'Payroll' => 'Payroll',
+      'Purchase' => 'Purchase',
+      'Withdrawal' => 'Withdrawal'
+    ];
+
+    public static $subcategories =  [
+      'ATM' => 'ATM',
+      'Card' => 'Card',
+      'Debit Card Purchase' => 'Debit Card Purchase',
+      'Discover' => 'Discover' ,
+      'e-shopping' => 'e-shopping',
+      'Entertainment' => 'Entertainment',
+      'GEICO' => 'GEICO',
+      'Grocery' => 'Grocery',
+      'House-Rent' => 'House-Rent',
+      'Internet' => 'Internet' ,
+      'Jerseystrong'=> 'Jerseystrong',
+      'Parking' => 'Parking',
+      'Personal Care' => 'Personal Care',
+      'phone' => 'phone',
+      'PNC'=> 'PNC',
+      'PSEG' => 'PSEG',
+      'Restaurants' => 'Restaurants',
+      'SLASHSUPPORT' => 'SLASHSUPPORT',
+      'HouseHold' =>'HouseHold' ,
+      'Transport' => 'Transport',
+    ];
+
+
 
     public static function getInstance()
     {

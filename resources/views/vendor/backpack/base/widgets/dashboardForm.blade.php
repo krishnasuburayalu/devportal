@@ -35,7 +35,8 @@
 	</select>
 	<label class="my-1 mr-2" for="inlineFormCustomSelectPref">Year</label>
 	<select class="custom-select my-1 mr-sm-3" id="inlineFormCustomSelectPref" name="y">
-		<option selected value="2019">2019</option>
+		<option @if($widget["selcted_year"]==2020) selected  @endif  value="2020">2020</option>
+		<option @if($widget["selcted_year"]==2019) selected  @endif value="2019">2019</option>
 	</select>
  <div class="col-auto">
 	   <button type="submit" class="btn btn-success my-1">Filter</button>

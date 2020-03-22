@@ -28,11 +28,11 @@ class HomeController extends AdminController
     {
         $year = (int) $request->query('y', 0);
         if($year == 0){
-          $year = '2019';
+          $year = date("Y");
         }
         $month = (int) $request->query('m', 'na');
         if($month == 'na'){
-          $month = '10';
+          $month = date("m");
         }
         $cat = $request->query('c', 'na');
         if($cat == 'na'){
@@ -47,6 +47,7 @@ class HomeController extends AdminController
         $overallcat = $trans->getMonthSpendingOverallCatgory();
         $overallsubcat = $trans->getMonthSpendingOverallSubCatgory();
         $overall = $trans->getMonthSpendingOverall();
+        $overall_r = $trans->getSpendingOverall();
         $this->data['title'] = trans('backpack::base.dashboard'); // set the page title
         $this->data['breadcrumbs'] = [
             trans('backpack::crud.admin')     => backpack_url('dashboard'),
@@ -69,6 +70,9 @@ class HomeController extends AdminController
                   'filter_cat' => $trans->getCategoriesFilter(),
                   'filter_subcat' => $trans->getSubCategoriesFilter(),
                 ],
+
+
+
                 [
                     'type' => 'chartPie',
                     'chart_id' => 'chart_id123pie',
@@ -109,6 +113,15 @@ class HomeController extends AdminController
                         'header' => 'Spendin of ' . $month . '/'.$year ,
                      ]
                 ],
+                [
+                    'type' => 'chartTable',
+                    'datatable' => $overall_r,
+                    'wrapperClass' => 'col-sm-6 col-md-12',
+                    'content' => [
+                        'header' => 'Overall Spending' ,
+                     ]
+                ],
+
               ]
             ],
 

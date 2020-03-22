@@ -26,10 +26,12 @@ var creatLineChart = function(id, labels, series){
 					 var b = Math.floor(Math.random() * 255);
 					 return "rgb(" + r + "," + g + "," + b + ")";
 				};
+	  var color =['#003f5c', '#f95d6a','#2f4b7c','#ff7c43', '#665191',  '#ffa600','#a05195', '#d45087'];
+
 		for (var i in series) {
-			var color = dynamicColors();
-       series[i]['borderColor'] = color;
-			 series[i]['backgroundColor'] = color;
+		//	var color = dynamicColors();
+       series[i]['borderColor'] = color[i];
+			 series[i]['backgroundColor'] = color[i];
 			 series[i]['fill'] = false;
 			 series[i]['type'] = 'line';
     }
@@ -77,11 +79,13 @@ var creatPieChart = function(id, labels, series){
 					 var b = Math.floor(Math.random() * 255);
 					 return "rgb(" + r + "," + g + "," + b + ")";
 				};
-				var bgcolor =[];
+/*				var bgcolor =[];
 				for (var i in series) {
 					var color = dynamicColors();
 		       bgcolor[i] = color;
 		    }
+				*/
+		var bgcolor =['#003f5c', '#f95d6a','#2f4b7c','#ff7c43', '#665191',  '#ffa600','#a05195', '#d45087'];
 		var ctx = $('#' + id);
 		var myChart = new Chart(ctx, {
     type: 'pie',

@@ -47,7 +47,7 @@ class importpnc extends Command
       try{
         $file_name = $this->argument('file');
         if(!Storage::exists($file_name)){
-          echo "file Not found";
+          echo "file Not found" . Storage::path($file_name);
         }
         $type = $this->argument('type');
         if(!$file_name){

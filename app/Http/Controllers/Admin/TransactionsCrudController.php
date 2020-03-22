@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\TransactionsRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use App\Classes\PncPatternFinder;
+
 
 /**
  * Class TransactionsCrudController
@@ -79,6 +81,18 @@ class TransactionsCrudController extends CrudController
           'decimals' => 2,
           'dec_point' => '.',
           'thousands_sep' => ',',
+        ]);
+        $this->crud->addField([
+          'name' => 'category',
+          'type' => 'select_from_array',
+          'label' => "Category",
+          'options' => PncPatternFinder::$categories,
+        ]);
+        $this->crud->addField([
+          'name' => 'subCategory',
+          'type' => 'select_from_array',
+          'label' => "Sub Category",
+          'options' => PncPatternFinder::$subcategories,
         ]);
         $this->crud->addField([
           'name' => 'transactionType',

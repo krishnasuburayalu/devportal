@@ -46,11 +46,11 @@ class DiscoverImport implements OnEachRow
            $trns = array(
                  'amount' => Arr::get($row, '3'),
                  'description' => $description,
-                 'transactionType' => 'CREDIT',
+                 'transactionType' => 'DEBIT',
                  'transactionDate' => Arr::get($row, '1'),
                  'transactionStatus' => 'COMPLETED',
-                 'category' => 'Purchase',
-                 'subCategory' => 'shopping',
+                 'category' => 'Unknown',
+                 'subCategory' => 'Unknown',
                );
          }
          //print_r($trns);

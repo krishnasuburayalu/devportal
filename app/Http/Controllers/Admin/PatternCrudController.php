@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\PatternRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use App\Classes\PncPatternFinder;
 
 /**
  * Class PatternCrudController
@@ -48,14 +49,17 @@ class PatternCrudController extends CrudController
         ]);
         $this->crud->addField([
           'name' => 'category',
-          'type' => 'text',
-          'label' => "Category "
+          'type' => 'select_from_array',
+          'label' => "Category",
+          'options' => PncPatternFinder::$categories,
         ]);
         $this->crud->addField([
           'name' => 'subCategory',
-          'type' => 'text',
-          'label' => "Sub Category "
+          'type' => 'select_from_array',
+          'label' => "Sub Category",
+          'options' => PncPatternFinder::$subcategories,
         ]);
+
         $this->crud->addField([
           'name' => 'transactionType',
           'label' => "Type",

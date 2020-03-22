@@ -194,4 +194,61 @@ class DashboardReport
       //  print_r(json_encode($series));
         return array('series' => $series, 'labels' => array_values($labels));
     }
+
+    public function getSpendingOverall(){
+        //SELECT MONTH(transactionDate) ,YEAR(transactionDate) ,subCategory, ROUND(sum(amount), 2) FROM `transactions` WHERE transactionType='DEBIT' GROUP BY subCategory, YEAR(transactionDate), MONTH(transactionDate) ORDER BY `transactions`.`subCategory` ASC
+        $years = ['2018','2019', '2020'];
+        $months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+        $transactions = DB::table('transactions')
+                ->select(
+                    DB::raw('MONTH(transactionDate) as rmonth'),
+                    DB::raw('YEAR(transactionDate) as ryear'),
+                    DB::raw('ROUND(sum(amount), 2) as amt'),
+                     'subCategory',
+                );
+      $transactions->where('transactionType', 'DEBIT', '=');
+      $transactions = $transactions->groupBy('subCategory', 'ryear','rmonth')->orderBy('subCategory')->get()->toArray();
+      $reftransactions = [];
+      $subCategories =[];
+
+      if(count($transactions) > 0 ){
+        foreach ($transactions as $t) {
+          $k = $t->ryear . $t->rmonth.$t->subCategory ;
+
+          $reftransactions[$k] = (array)$t;
+          $reftransactions[$k]['change'] = 'no';
+          $st = $t->subCategory;
+          $subCategories[$st] = $st;
+        }
+        $transactions =[];
+        //print_r($reftransactions);
+        foreach ($subCategories as $sc) {
+            foreach($years as $y ){
+                  foreach ($months as $m) {
+                    $k = $y.$m.$sc;
+                    $k_prev = ($y-1) . $m . $sc;
+                    $prev_amt = Arr::get($reftransactions, $k_prev . '.amt', 0);
+                    $default = ['rmonth' => $m, 'ryear' => $y, 'amt' => 0, 'subCategory' => $sc, 'change' => 'no'];
+                    $transactions['amt'][$k] = Arr::get($reftransactions, $k, $default);
+                    $curr_amt = Arr::get($transactions, 'amt.'. $k. '.amt', 0);
+                    if($curr_amt > $prev_amt){
+                      $transactions['amt'][$k]['change'] = 'up';
+                    }
+                    if($curr_amt < $prev_amt){
+                      $transactions['amt'][$k]['change'] = 'down';
+                    }
+                }
+            }
+        }
+        $transactions['sc'] = $subCategories;
+        $transactions['y'] = $years;
+        $transactions['m'] = $months;
+      }else{
+        $transactions['amt'] = [];
+        $transactions['sc'] = [];
+        $transactions['y'] = $years;
+        $transactions['m'] = $months;
+      }
+        return $transactions;
+    }
 }
