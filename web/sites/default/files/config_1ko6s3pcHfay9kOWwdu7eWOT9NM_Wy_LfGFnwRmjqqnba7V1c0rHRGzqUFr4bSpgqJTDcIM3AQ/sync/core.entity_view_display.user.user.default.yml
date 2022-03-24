@@ -1,0 +1,62 @@
+uuid: d07e7dc1-9ce6-469d-953e-a4ce268c526b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.user_picture
+    - image.style.1_1_80x80
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: 2PPZpiAkDybC7S98lR35v0eSQgWuqfyojQTZS8OGsHM
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  billingtype:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  display_name:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  email:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  member_for:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  roles:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: 1_1_80x80
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+  username:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

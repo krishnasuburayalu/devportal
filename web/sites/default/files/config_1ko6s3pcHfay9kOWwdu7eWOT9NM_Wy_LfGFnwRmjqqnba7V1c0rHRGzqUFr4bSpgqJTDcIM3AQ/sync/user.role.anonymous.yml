@@ -1,0 +1,27 @@
+uuid: ef065fff-fe61-4308-b770-37af5ddccaf2
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - comment
+    - contact
+    - filter
+    - media
+    - search
+    - system
+_core:
+  default_config_hash: D9aK3qaiuH6ybhHQ-DFA1-_HfGvyahrKWNHE67snm8c
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'search content'
+  - 'use text format restricted_html'
+  - 'view media'
+  - 'view published apidoc entities'

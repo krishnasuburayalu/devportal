@@ -1,0 +1,12 @@
+uuid: 9780d74b-a0d8-45a8-81d1-65453191bf04
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_m10n
+_core:
+  default_config_hash: EgtSo8W_dlOceFROqCmGZENAhD8mOmBk1kwL5gWOGkM
+id: xrate_plan.teaser
+label: Teaser
+targetEntityType: xrate_plan
+cache: true

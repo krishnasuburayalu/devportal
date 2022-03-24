@@ -1,0 +1,25 @@
+uuid: 7d553f62-9ce6-43ac-8824-439bb065265c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.apidoc
+  module:
+    - text
+_core:
+  default_config_hash: tBD7z0g0RPq0BhUtVSFeyiVjbPm20it8VwFuM7mh7OY
+id: node.apidoc.body
+field_name: body
+entity_type: node
+bundle: apidoc
+label: Description
+description: 'Description of the API.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

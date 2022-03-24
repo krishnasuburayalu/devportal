@@ -1,0 +1,25 @@
+{
+  "name": "apigee_kickstart",
+  "description": "A theme based on Radix.",
+  "private": true,
+  "scripts": {
+    "dev": "mix",
+    "watch": "mix watch",
+    "hot": "mix watch --hot",
+    "production": "mix --production"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.6.0",
+    "browser-sync": "^2.27.5",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "css-vars-ponyfill": "^2.4.6",
+    "jquery": "^3.6.0",
+    "laravel-mix": "^6.0.27",
+    "popper.js": "^1.16.1",
+    "resolve-url-loader": "^4.0.0",
+    "sass": "^1.37.5",
+    "sass-loader": "^12.1.0",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^5.48.0"
+  }
+}

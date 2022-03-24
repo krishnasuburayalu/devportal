@@ -1,0 +1,6 @@
+_core:
+  default_config_hash: OodCWm_oN1tGFlZlug1gB_LtYOtltOglROYB2H0wh2I
+cache:
+  max_age: 0
+enable_insufficient_funds_workflow: true
+max_statement_history_months: 12

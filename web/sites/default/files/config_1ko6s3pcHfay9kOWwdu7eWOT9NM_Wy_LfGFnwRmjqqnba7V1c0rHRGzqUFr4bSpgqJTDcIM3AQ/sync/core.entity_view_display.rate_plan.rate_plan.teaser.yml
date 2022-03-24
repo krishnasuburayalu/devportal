@@ -1,0 +1,63 @@
+uuid: 3e68a37a-e5c7-418e-b967-1dedc61452fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.rate_plan.teaser
+  module:
+    - apigee_m10n
+_core:
+  default_config_hash: Mfj5U3cop9gKFyvqBw1jNmgEQu6TeqLZZ5mQmJyPxxQ
+id: rate_plan.rate_plan.teaser
+targetEntityType: rate_plan
+bundle: rate_plan
+mode: teaser
+content:
+  packageProducts:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+  products:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  advance: true
+  contractDuration: true
+  contractDurationType: true
+  currency: true
+  description: true
+  displayName: true
+  earlyTerminationFee: true
+  endDate: true
+  freemiumDuration: true
+  freemiumDurationType: true
+  freemiumUnit: true
+  frequencyDuration: true
+  frequencyDurationType: true
+  futurePlanLinks: true
+  futurePlanStartDate: true
+  id: true
+  name: true
+  organization: true
+  packageEntity: true
+  paymentDueDays: true
+  private: true
+  productBundle: true
+  prorate: true
+  published: true
+  purchase: true
+  ratePlanDetails: true
+  recurringFee: true
+  recurringStartUnit: true
+  recurringType: true
+  setUpFee: true
+  startDate: true

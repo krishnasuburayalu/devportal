@@ -1,0 +1,37 @@
+uuid: 58eae77d-eb16-4afc-bd9e-5413d4387a83
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:title_bar:f2a03392-4abc-4f25-9f35-e28e63bb1a88'
+  module:
+    - block_content
+    - system
+  theme:
+    - apigee_kickstart
+  enforced:
+    module:
+      - apigee_m10n
+      - apigee_kickstart_content
+_core:
+  default_config_hash: uMbABHvevt7NtzGNk6CbaVQUIbkfxfE9mjKh-XNfwJQ
+id: apigee_kickstart_title_bar_pricing_plans
+theme: apigee_kickstart
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:f2a03392-4abc-4f25-9f35-e28e63bb1a88'
+settings:
+  id: 'block_content:f2a03392-4abc-4f25-9f35-e28e63bb1a88'
+  label: 'Title bar: Pricing & Plans'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*/plans'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,23 @@
+uuid: 6d8d5ec0-9c5b-4666-bb9c-17d3a2d12629
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.blockquote
+  module:
+    - text
+_core:
+  default_config_hash: hWeKot4bV4EWEOe8tx8FvW2kioLG2PHy-ujS32336X4
+id: paragraph.blockquote.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: blockquote
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

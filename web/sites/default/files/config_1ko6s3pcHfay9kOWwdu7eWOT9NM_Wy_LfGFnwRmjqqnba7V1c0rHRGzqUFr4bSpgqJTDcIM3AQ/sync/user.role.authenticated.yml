@@ -1,0 +1,55 @@
+uuid: f725d448-0777-4fb9-8d78-f672b88bdaa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - apigee_edge
+    - apigee_edge_teams
+    - apigee_m10n
+    - comment
+    - contact
+    - filter
+    - media
+    - search
+    - shortcut
+    - system
+_core:
+  default_config_hash: Ad14g-dfF-BfUNsmedzmYK3aNp-fL2DRyFGIIOhnA2w
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'accept own team invitation'
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'add credit to own team prepaid balance'
+  - 'analytics own developer_app'
+  - 'create developer_app'
+  - 'decline own team invitation'
+  - 'delete own developer_app'
+  - 'download own reports'
+  - 'download prepaid balance reports'
+  - 'post comments'
+  - 'purchase rate_plan'
+  - 'purchase xrate_plan'
+  - 'refresh own prepaid balance'
+  - 'search content'
+  - 'skip comment approval'
+  - 'update own developer_app'
+  - 'update own purchased_plan'
+  - 'update own purchased_product'
+  - 'use text format basic_html'
+  - 'view media'
+  - 'view own billing details'
+  - 'view own developer_app'
+  - 'view own prepaid balance'
+  - 'view own purchased_plan'
+  - 'view own purchased_product'
+  - 'view published apidoc entities'
+  - 'view rate_plan'
+  - 'view xrate_plan'

@@ -1,0 +1,12 @@
+uuid: 1bd1e2ba-17e6-4fb1-9cfb-c767c1692da7
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_m10n
+_core:
+  default_config_hash: MuHgpkBCflvLlP_nLZx-7aO8ljqnrPUbkQsUO_Ra5Iw
+id: rate_plan.teaser
+label: Teaser
+targetEntityType: rate_plan
+cache: true

@@ -1,0 +1,10 @@
+uuid: 8b710c78-ccdf-42ee-a16b-a5b95f424ebd
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 47LmEJS9U40pIcxT56C9NXm_BndzAJ078bZMDAqTI3Y
+id: cta
+label: 'Call to Action block'
+revision: 1
+description: 'A <em>Call to Action</em>, which utilizes a Paragraph by the same name, consists of a title, description and one or more button-style links.'
